@@ -6,6 +6,7 @@ const { Tag, Product, ProductTag } = require('../models');
 router.get('/', async(req, res) => {
   // find all tags
   // be sure to include its associated Product data
+  //My entry for setting the tag data for the GET function
   try {
     const tagData = await Tag.findAll({
      attributes:['id','tag_name'],
@@ -25,6 +26,7 @@ router.get('/', async(req, res) => {
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
+  //My entry for setting the tag data for the GET function
   try {
     const tagData = await Tag.findOne({
     where:{
@@ -47,6 +49,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/',async (req, res) => {
   // create a new tag
+  //My entry for setting the tag data for the POST function
   try {
     const tagData = await Tag.create({
     tag_name: req.body.tag_name
@@ -59,6 +62,7 @@ router.post('/',async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
+  //My entry for setting the category data for the PUT function
   try {
     const tagData = await Tag.update(req.body,{
      where: {
@@ -74,6 +78,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
+  //My entry for setting the tagdata for the DELETE function
   try {
     const tagData = await Tag.destroy(req.body,{
      where: {

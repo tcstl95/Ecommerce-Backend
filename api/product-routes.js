@@ -7,6 +7,7 @@ const { Product, Category, Tag, ProductTag } = require('../models');
 router.get('/',async (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
+  //My entry for setting the product data for the GET function
   try {
     const productData = await Product.findAll({
      attributes:['id','product_name','price','stock','category_id'],
@@ -31,6 +32,7 @@ router.get('/',async (req, res) => {
 router.get('/:id',async (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  //My entry for setting the category data for the GET function
   try {
     const productData = await Product.find({
      attributes:['id','product_name','price','stock','category_id'],
@@ -86,6 +88,7 @@ router.post('/', (req, res) => {
 // update product
 router.put('/:id', (req, res) => {
   // update product data
+  //My entry for setting the category data for the PUT function
   Product.update(req.body, {
     where: {
       id: req.params.id,
@@ -127,6 +130,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
+  //My entry for setting the category data for the DELETE function
   try {
     const productData = await Location.destroy({
       where: {
